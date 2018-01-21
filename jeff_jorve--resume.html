@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Jeff Jorve - Resume</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <style>
+        .subscribe {
+            width: 28px;
+            height: 28px;
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            margin-left: -15px;
+            border: #EBF2F6 1px solid;
+            text-align: center;
+            line-height: 2.4rem;
+            border-radius: 50px;
+            background: #fff;
+            transition: box-shadow 0.5s;
+        }
+        
+        .subscribe:before {
+            color: #D2DEE3;
+            font-size: 10px;
+            position: absolute;
+            top: 9px;
+            left: 9px;
+            font-weight: bold;
+            transition: color 0.5s ease;
+        }
+        /* Add a box shadow to on hover */
+        
+        .subscribe:hover {
+            box-shadow: rgba(0, 0, 0, 0.05) 0 0 0 3px;
+            transition: box-shadow 0.25s;
+        }
+        
+        .subscribe:hover:before {
+            color: #50585D;
+        }
+        /* for Bootstrap Icon */
+        
+        .bs-booticon {
+            display: inline-block;
+            font-weight: 500;
+            color: #fff;
+            background-color: #563d7c;
+            border-radius: 15%;
+            cursor: default;
+            text-align: center
+        }
+        
+        .bs-booticon-xs {
+            width: 16px;
+            height: 16px;
+            font-size: 12px;
+            line-height: 1.4em;
+        }
+        
+        .found-foundicon {
+            display: inline-block;
+            font-weight: 500;
+            color: #fff;
+            background-color: #008cba;
+            border-radius: 0;
+            cursor: default;
+            text-align: center
+        }
+        
+        .found-foundicon-xs {
+            width: 15px;
+            height: 15px;
+            font-size: 12px;
+            line-height: 1.4em;
+        }
+        
+        .resume-navbar {
+            position: static;
+            margin-top: 0;
+        }
+        
+        .resume-sidebar.affix {
+            position: static
+        }
+        
+        @media (min-width:768px) {
+            .resume-sidebar {
+                padding-left: 20px
+            }
+        }
+        
+        .resume-sidebar .nav>li>a {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: #999;
+            padding: 4px 20px;
+            border-radius: 0;
+        }
+        
+        .resume-sidebar .nav>li>a:hover,
+        .resume-sidebar .nav>li>a:focus {
+            padding-left: 19px;
+            color: #428bca;
+            text-decoration: none;
+            background-color: transparent;
+            border-left: 1px solid #428bca
+        }
+        
+        .resume-sidebar .nav>.active>a,
+        .resume-sidebar .nav>.active:hover>a,
+        .resume-sidebar .nav>.active:focus>a {
+            padding-left: 18px;
+            font-weight: 700;
+            color: #428bca;
+            background-color: transparent;
+            border-left: 2px solid #428bca;
+        }
+        
+        .resume-sidebar .nav .nav {
+            display: none;
+            padding-bottom: 10px
+        }
+        
+        .resume-sidebar .nav .nav>li>a {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            padding-left: 30px;
+            font-size: 12px;
+            font-weight: 400
+        }
+        
+        .resume-sidebar .nav .nav>li>a:hover,
+        .resume-sidebar .nav .nav>li>a:focus {
+            padding-left: 29px
+        }
+        
+        .resume-sidebar .nav .nav>.active>a,
+        .resume-sidebar .nav .nav>.active:hover>a,
+        .resume-sidebar .nav .nav>.active:focus>a {
+            font-weight: 500;
+            padding-left: 28px
+        }
+        
+        .back-to-top {
+            display: none;
+            margin-top: 10px;
+            margin-left: 10px;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #999
+        }
+        
+        .back-to-top:hover {
+            text-decoration: none;
+            color: #428bca
+        }
+        
+        @media (min-width:768px) {
+            .back-to-top {
+                display: block
+            }
+        }
+        
+        @media (min-width:992px) {
+            .resume-sidebar .nav>.active>ul {
+                display: block
+            }
+            .resume-sidebar.affix,
+            .resume-sidebar.affix-bottom {
+                width: 213px
+            }
+            .resume-sidebar.affix {
+                position: fixed;
+                top: 30px
+            }
+            .resume-sidebar.affix-bottom {
+                position: absolute
+            }
+            .resume-sidebar.affix-bottom .resume-sidenav,
+            .resume-sidebar.affix .resume-sidenav {
+                margin-top: 0;
+                margin-bottom: 0
+            }
+        }
+        
+        @media (min-width:1200px) {
+            .resume-sidebar.affix-bottom,
+            .resume-sidebar.affix {
+                width: 263px
+            }
+        }
+        
+        body {
+            padding-bottom: 600px;
+        }
+        
+        ul.additional-skills {
+            display: inline-block;
+            list-style: none;
+        }
+        
+        .additional-skills>li {
+            display: inline-block;
+            padding: 0 2px;
+        }
+        
+        .additional-skills>li:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .skill-type {
+            padding: 3px 0 3px 0;
+            border-bottom: solid 1px #f5f5f5;
+        }
+        
+        .skill-type:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".resume-nav">
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Jeff Jorve</h1>
+            <p>freelance editor, web developer &amp; data scientist</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-9 ">
+            <main class="content" role="main">
+
+                <div id="education">
+                    <h2 class="page-header text-center"><small><i class="fa fa-book"></i></small> Education <small><i class="fa fa-book"></i></small></h2>
+                    <div class="col-md-12" id="SAIS">
+                        <div class="col-md-10">
+                            <h3><small><i class="fa fa-check-square-o"></i></small> Master of Arts <small>International Relations</small></h3>
+                            <h4><a href="http://www.jhu.edu" target="_blank"><small><i class="fa fa-building-o"></i></small> Johns Hopkins University</a> <a href="http://www.sais-jhu.edu/" target="_blank"><small>School of Advanced International Studies (SAIS)</small></a></h4>
+                        </div>
+                        <div class="col-md-2 text-right">
+                            <h3><a class="location" href="https://goo.gl/maps/qdcfr" data-toggle="tooltip" data-placement="top" title="Washington, DC"><i class="fa fa-map-marker"></i></a> <i class="fa fa-calendar dates" data-toggle="tooltip" data-placement="top"
+                                    title="Sept 2010 - May 2012"></i></h3>
+                        </div>
+                        <div class="col-md-12">
+                            <table class="table table-hover">
+                                <tr>
+                                    <td width="25%" class="text-right"><strong>Concentrations</strong></td>
+                                    <td width="75%">Conflict Management &amp; Quantitative Methods</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right"><strong>Coursework</strong></td>
+                                    <td>Applied Econometrics, Delivering Development Assistance, Post-Conflict Reconstruction, Microeconomics of Development, Quantitative Global Economics</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-12" id="Wesleyan">
+                        <div class="col-md-10">
+                            <h3><small><i class="fa fa-check-square-o"></i></small> Bachelor of Arts <small>East Asian Studies</small></h3>
+                            <h4><a href="http://www.wesleyan.edu/" target="_blank"><small><i class="fa fa-building-o"></i></small> Wesleyan University</a></h4>
+                        </div>
+                        <div class="col-md-2 text-right">
+                            <h3><a class="location" href="https://goo.gl/maps/jndpF" data-toggle="tooltip" data-placement="top" title="Middletown, CT"><i class="fa fa-map-marker"></i></a> <i class="fa fa-calendar dates" data-toggle="tooltip" data-placement="top"
+                                    title="Sept 2000 - May 2004"></i></h3>
+                        </div>
+                        <div class="col-md-12">
+                            <table class="table table-hover">
+                                <tr>
+                                    <td width="25%" class="text-right"><strong>Concentration</strong></td>
+                                    <td width="75%">East Asian Studies</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right"><strong>Coursework</strong></td>
+                                    <td>Political Economy of Developing Countries, Human Rights Across Cultures, Econometrics, Statistics</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right"><strong>Awards</strong></td>
+                                    <td>2004 Francis M. Sheng Award Winner for Excellence in Chinese Language</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" id="experience" style="margin: 0px; padding: 0px;">
+                    <h2 class="page-header text-center"><small><i class="fa fa-briefcase"></i></small> Experience <small><i class="fa fa-briefcase"></i></small></h2>
+                    <div>
+                        <div class="col-md-12" id="ROADS">
+                            <div class="col-md-7">
+                                <h3><small><i class="fa fa-user"></i></small> Director of Data & Accountability</h3>
+                                <h4><a href="" target="_blank"><small><i class="fa fa-building-o"></i></small> ROADS Charter Schools</a></h4>
+                            </div>
+                            <div class="col-md-5 text-right">
+                                <h3><a class="location" href="https://goo.gl/maps/Yi55KH146iw" data-toggle="tooltip" data-placement="top" title="Brooklyn, NY"><i class="fa fa-map-marker"></i></a> <i class="fa fa-calendar dates" data-toggle="tooltip" data-placement="top"
+                                        title="May 2013 - Present"></i></h3>
+                            </div>
+                            <div class="col-md-12">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <td>Oversaw data management for school network with 400+ students</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Responsible for creating actionable insights on court-involved student population</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Created merged datasets from multiple incompatible databases</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Liaised with NYC Department of Education to ensure students would continue education post ROADS closure</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-md-12" id="BDS">
+                            <div class="col-md-7">
+                                <h3><small><i class="fa fa-user"></i></small> Database Administrator</h3>
+                                <h4><a href="http://bds.org" target="_blank"><small><i class="fa fa-building-o"></i></small> Brooklyn Defender Services</a></h4>
+                            </div>
+                            <div class="col-md-5 text-right">
+                                <h3><a class="location" href="https://goo.gl/maps/UtnYFkCwNf42" data-toggle="tooltip" data-placement="top" title="Brooklyn, NY"><i class="fa fa-map-marker"></i></a> <i class="fa fa-calendar dates" data-toggle="tooltip" data-placement="top"
+                                        title="May 2013 - Present"></i></h3>
+                            </div>
+                            <div class="col-md-12">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <td>Oversaw data management for non-profit legal aid services provider with annual case load over 50,000 </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Responsible for reporting regularly to grant-making organizations &ndash; both state and non-profit &ndash; in order to maintain funding</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Worked with Department of Corrections to automate client lookup services</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Created new database and systems for donor relations and outreach, including email form creation and contact tracking</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-md-12" id="IFC">
+                            <div class="col-md-7">
+                                <h3><small><i class="fa fa-user"></i></small> Communications Consultant</h3>
+                                <h4><a href="http://www.ifc.org/wps/wcm/connect/corp_ext_content/ifc_external_corporate_site/home" target="_blank"><small><i class="fa fa-building-o"></i></small> International Finance Corporation</a></h4>
+                            </div>
+                            <div class="col-md-5 text-right">
+                                <h3><a class="location" href="https://goo.gl/maps/FsK86" data-toggle="tooltip" data-placement="top" title="Washington, DC"><i class="fa fa-map-marker"></i></a> <i class="fa fa-calendar dates" data-toggle="tooltip" data-placement="top"
+                                        title="May 2013 - Present"></i></h3>
+                            </div>
+                            <div class="col-md-12">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <td>Served as point person and content creator for monthly and quarterly newsletters</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Designed, finalized and implemented new unified look for Partnerships &amp; Advisory Operations (CPA) communications across eight units within the department, including new document templates for CPA materials</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Redesigned the CPA portion of the Advisory Services intranet portal, including recoding all pages in compliance with HTML5 and CSS3 standards</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wrote, implemented, analyzed and drafted final report on Advisory Services staff-wide survey for presentation to the Advisory Services Leadership Team</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Support CPA units in all communications needs, including making regular updates to AS intranet, writing Newsflash Plus stories for CPA-related events, and drafting emails for dissemination from CPA officers and
+                                            management</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Support the broader Advisory Services communications team by maintaining the external website and ensuring all web content is up to date, reflecting the current work and strategic priorities of the business</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-12" id="InterMedia">
+                            <div class="col-md-7">
+                                <h3><small><i class="fa fa-user"></i></small> Research Consultant</h3>
+                                <h4><a href="http://www.intermedia.org/" target="_blank"><small><i class="fa fa-building-o"></i></small> InterMedia</a></h4>
+                            </div>
+                            <div class="col-md-5 text-right">
+                                <h3><a class="location" href="https://goo.gl/maps/aK596" data-toggle="tooltip" data-placement="top" title="Washington, DC"><i class="fa fa-map-marker"></i></a> <i class="fa fa-calendar dates" data-toggle="tooltip" data-placement="top"
+                                        title="May 2012 - Jan 2013"></i></h3>
+                            </div>
+                            <div class="col-md-12">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <td>Served as Project Manager for N=2000 survey of strategic communication effectiveness in Somalia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Drafted documents on key organizational capabilities: theories of change, vulnerable populations, mobile money</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wrote and delivered final report for 21-interview qualitative program review for a major European seminar</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wrote final report for mixed-method evaluation of a major European public broadcaster’s programming in Tanzania and Kenya</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Conducted business development in Nairobi and DC, including writing proposals in response to RFPs and networking with potential clients and partners</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-12" id="Ashoka">
+                            <div class="col-md-7">
+                                <h3><small><i class="fa fa-user"></i></small> Research Intern</h3>
+                                <h4><a href="http://fec.ashoka.org/content/housing-all-india-0" target="_blank"><small><i class="fa fa-building-o"></i></small> Ashoka India - Housing for All</a></h4>
+                            </div>
+                            <div class="col-md-5 text-right">
+                                <h3><a class="location" href="https://goo.gl/maps/90gFy" data-toggle="tooltip" data-placement="top" title="Bangalore, India"><i class="fa fa-map-marker"></i></a> <i class="fa fa-calendar dates" data-toggle="tooltip" data-placement="top"
+                                        title="June 2011 - Aug 2011"></i></h3>
+                            </div>
+                            <div class="col-md-12">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <td>Spearheaded revisions to methodology for nation-wide survey of slum housing, focusing on (then) current surveys in Padna and Madurai</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Performed regression analysis to determine factors correlated with willingness to relocate from unregulated slum housing to permanent housing structures</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Coordinated national summit of stakeholders in the affordable housing sector to create a set of best practices for sector-wide distribution</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Designed and edited first Ashoka India – Housing for All newsletter</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-12" id="EIU">
+                            <div class="col-md-7">
+                                <h3><small><i class="fa fa-user"></i></small> Contributing Editor</h3>
+                                <h4><a href="http://www.eiu.com/home.aspx" target="_blank"><small><i class="fa fa-building-o"></i></small> Economist Intelligence Unit</a></h4>
+                            </div>
+                            <div class="col-md-5 text-right">
+                                <h3><a class="location" href="https://goo.gl/maps/90gFy" data-toggle="tooltip" data-placement="top" title="Shanghai, China"><i class="fa fa-map-marker"></i></a> <i class="fa fa-calendar dates" data-toggle="tooltip" data-placement="top"
+                                        title="Jan 2006 - Jan 2009"></i></h3>
+                            </div>
+                            <div class="col-md-12">
+                                <table class="table table-hover" style="margin-bottom: 0;">
+                                    <tr>
+                                        <td>Daily analysis of regulatory regime change on China’s business environment</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Compiled data on mergers &amp; acquisitions activity and trends</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wrote case studies on enterprises with innovative China strategies</td>
+                                    </tr>
+                                </table>
+                                <table class="table table-hover" style="margin-top: 0;">
+                                    <tr>
+                                        <td width="25%" class="text-right"><strong>June '08</strong></td>
+                                        <td width="75%%">Researched and structured a presentation for Dow Chemicals on China-specific technological innovations in food processing and packaging</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right"><strong>March '08</strong></td>
+                                        <td>Contributed significantly to updates of EIU’s <em>China Hand</em> manual, addressing speculation over real estate bubble and upcoming workers’ rights legislation</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right"><strong>August '07</strong></td>
+                                        <td>Executed 30-company survey and market forecast for Northeastern China, including four case studies on companies in the region</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right"><strong>June '07</strong></td>
+                                        <td>performed qualitative and quantitative analysis on Liaoning province market forecast data for multinational corporation to inform medium-term investment strategy</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right"><strong>March '07</strong></td>
+                                        <td>guest editor for EIU <em>Business China</em> 30th anniversary issue</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-12" id="freelance">
+                            <div class="col-md-7">
+                                <h3><small><i class="fa fa-user"></i></small> Freelance Consultant</h3>
+                            </div>
+                            <div class="col-md-5 text-right">
+                            </div>
+                            <div class="col-md-12">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <td width="25%" class="text-right">
+                                            <a href="http://www.hornallanderson.com/" target="_blank"><strong><i class="fa fa-building-o"></i> Hornall Anderson</strong></a> <br>
+                                            <a class="location" href="https://goo.gl/maps/H0bnW" data-toggle="tooltip" data-placement="bottom" title="Seattle, WA"><i class="fa fa-map-marker"></i></a> <i class="fa fa-calendar dates" data-toggle="tooltip"
+                                                data-placement="bottom" title="Dec 2008"></i>
+                                        </td>
+                                        <td width="75%%">Researched and structured a presentation for Dow Chemicals on China-specific technological innovations in food processing and packaging</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">
+                                            <a href="http://www.mckinseychina.com/" target="_blank"><strong><i class="fa fa-building-o"></i> McKinsey</strong></a> <br>
+                                            <a class="location" href="https://goo.gl/maps/chvwc" data-toggle="tooltip" data-placement="bottom" title="Shanghai, China"><i class="fa fa-map-marker"></i></a> <i class="fa fa-calendar dates" data-toggle="tooltip"
+                                                data-placement="bottom" title="June 2007"></i>
+                                        </td>
+                                        <td>Analysed findings for McKinsey’s China Consumer Centre survey of over 2,000 Chinese households</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">
+                                            <a href="http://wkshanghai.com/" target="_blank"><strong><i class="fa fa-building-o"></i> W+K Shanghai</strong></a> <br>
+                                            <a class="location" href="https://goo.gl/maps/PFNbm" data-toggle="tooltip" data-placement="bottom" title="Shanghai, China"><i class="fa fa-map-marker"></i></a> <i class="fa fa-calendar dates" data-toggle="tooltip"
+                                                data-placement="bottom" title="July 2006"></i>
+                                        </td>
+                                        <td>Translated from Chinese to English and copy-edited case studies and creative proposals toward developing a China brand strategy for a major international athletic apparel client</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-12" id="newxietong">
+                            <div class="col-md-7">
+                                <h3><small><i class="fa fa-user"></i></small> International Sales Manager</h3>
+                                <h4><a href="http://www.thebundriversidehotelshanghai.com/" target="_blank"><small><i class="fa fa-building-o"></i></small> New Xietong International Hotel</a></h4>
+                            </div>
+                            <div class="col-md-5 text-right">
+                                <h3><a class="location" href="https://goo.gl/maps/PwtSt" data-toggle="tooltip" data-placement="top" title="Shanghai, China"><i class="fa fa-map-marker"></i></a> <i class="fa fa-calendar dates" data-toggle="tooltip" data-placement="top"
+                                        title="Sept 2004 - Sept 2005"></i></h3>
+                            </div>
+                            <div class="col-md-12">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <td>Expanded sales channels to include English-language web-based agencies such as Expedia and Travelocity</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Executed English language rebranding campaign for hotel to become more friendly to international travellers</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Co-ordinated with Sales staff to control yearly room rates in line with international exhibition schedules</td>
+                                    </tr>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" id="additional">
+                    <h2 class="text-center"><small><i class="fa fa-wrench"></i></small> Additional Skills <small><i class="fa fa-wrench"></i></small></h2>
+                    <div id="analysis" class="col-md-12 skill-type">
+                        <div class="col-md-3">
+                            <strong><i class="fa fa-table"></i> Finance</strong>
+                        </div>
+                        <div class="col-md-9">
+                            <ul class="additional-skills">
+                                <li>Candidate - <a href="https://www.cfainstitute.org/pages/index.aspx" target="_blank">Chartered Financial Advisor</a></li>
+                                <li>Graduate of University of Chicago Family Wealth Management Program</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="analysis" class="col-md-12 skill-type">
+                        <div class="col-md-3">
+                            <strong><i class="fa fa-table"></i> Data Analysis</strong>
+                        </div>
+                        <div class="col-md-9">
+                            <ul class="additional-skills">
+                                <li><img src="https://dl.dropboxusercontent.com/u/389236/favicon-no-number.png" alt="STATA" width="16px" height="16px" style="display: inline-block;"></li>
+                                <li>R</li>
+                                <li>Python</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="dataviz" class="col-md-12 skill-type">
+                        <div class="col-md-3"><strong><i class="fa fa-bar-chart-o"></i> Data Visualization</strong></div>
+                        <div class="col-md-9">
+                            <ul class="additional-skills">
+                                <li>Adobe Photoshop</li>
+                                <li>Illustrator</li>
+                                <li>InDesign</li>
+                                <li><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/71/QGis_Logo.png/225px-QGis_Logo.png" alt="QGIS" width="16px" height="16px" style="display: inline-block;"></li>
+                                <li><span <link style="color: #F7974E; font-weight:700">D3</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="webdev" class="col-md-12 skill-type">
+                        <div class="col-md-3"><strong><i class="fa fa-laptop"></i> Web Development</strong></div>
+                        <div class="col-md-9">
+                            <ul class="additional-skills">
+                                <li><a href="http://www.w3.org/" target="_blank"><i class="fa fa-html5"></i></a></li>
+                                <li><a href="http://www.w3.org/" target="_blank"><i class="fa fa-css3"></i></a></li>
+                                <li>
+                                    <a href="http://nodejs.org/" target="_blank"><img src="http://nodejs.org/images/baby-node.svg" width="12"></a>
+                                </li>
+                                <li><a href="http://fortawesome.github.io/Font-Awesome/" target="_blank"><i class="fa fa-flag"></i></a></li>
+                                <li><a href="http://getbootstrap.com/" target="_blank"><span class="bs-booticon bs-booticon-xs">B</span></a></li>
+                                <li><a href="http://foundation.zurb.com/index.html" target="_blank"><span class="found-foundicon found-foundicon-xs">F</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="econometrics" class="col-md-12 skill-type">
+                        <div class="col-md-3"><strong><i class="fa fa-search"></i> Econometrics</strong></div>
+                        <div class="col-md-9">
+                            <ul class="additional-skills">
+                                <li>Time series (autoregressive modeling)</li>
+                                <li>multivariate regression</li>
+                                <li>instrumental variables</li>
+                                <li>principal component analysis</li>
+                                <li>factor analysis</li>
+                                <li>panel data</li>
+                                <li>maximum likelihood estimation</li>
+                                <li>propensity score matching</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" id="interests">
+                    <h2 class="text-center"><small><i class="fa fa-heart"></i></small> Other Interests <small><i class="fa fa-heart"></i></small> </h2>
+                    <div class="col-md-12">
+                        <h1 class="text-center">
+                            <i class="fa fa-puzzle-piece icon-tips" data-toggle="tooltip" data-placement="top" title="NYT Crossword"></i>
+                            <i class="fa fa-coffee icon-tips" data-toggle="tooltip" data-placement="top" title="Caffeine"></i>
+                            <i class="fa fa-cutlery icon-tips" data-toggle="tooltip" data-placement="top" title="Bon Chon Korean Fried Chicken"></i>
+                            <i class="fa fa-beer icon-tips" data-toggle="tooltip" data-placement="top" title="Craft Beer"></i>
+                            <i class="fa fa-code icon-tips" data-toggle="tooltip" data-placement="top" title="Code Improvement"></i>
+                            <i class="fa fa-smile-o icon-tips" data-toggle="tooltip" data-placement="top" title="Emoji & Iconography"></i>
+                        </h1>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div class="col-md-3">
+            <nav role="navigation" class="bs-docs-sidebar resume-nav resume-sidebar">
+                <div class="btn-group" style="margin-bottom:10px;">
+                    <button type="button" class="btn btn-default btn-tip" data-toggle="tooltip" data-placement="bottom" title="Phone: +1(206)979-8381" data-container="body"><a href="tel:206-979-8381" ><i class="fa fa-phone" ></i></a></button>
+                    <button type="button" class="btn btn-default btn-tip" data-toggle="tooltip" data-placement="bottom" title="jjorve@gmail.com" data-container="body"><a href="mailto:jeff@jorve.cc"><i class="fa fa-envelope-o"></i></a> </button>
+                    <button type="button" class="btn btn-default btn-tip" data-toggle="tooltip" data-placement="bottom" data-container="body" data-html="true" title="321 Decatur St<br>Brooklyn, NY 11233"><a href="https://goo.gl/maps/xdWLiZyhVPz" target="_blank"><i class="fa fa-home"></i></a></button>
+                    <button type="button" class="btn btn-default"><a href="https://twitter.com/jorve" target="_blank"><i class="fa fa-twitter"></i></a></button>
+                    <button type="button" class="btn btn-default"><a href="https://github.com/jorve" target="_blank"><i class="fa fa-github-alt"></i></a></button>
+                </div>
+                <ul class="nav nav-pills nav-stacked resume-navbar resume-sidenav">
+                    <li>
+                        <a href="#education">Education</a>
+                        <ul class="nav">
+                            <li><a href="#SAIS">Johns Hopkins SAIS</a></li>
+                            <li><a href="#Wesleyan">Wesleyan</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#experience">Experience</a>
+                        <ul class="nav">
+                            <li><a href="#ROADS">ROADS Charter Schools</a></li>
+                            <li><a href="#BDS">Brooklyn Defender Services</a></li>
+                            <li><a href="#IFC">IFC</a></li>
+                            <li><a href="#InterMedia">InterMedia</a></li>
+                            <li><a href="#Ashoka">Ashoka &ndash; India</a></li>
+                            <li><a href="#EIU">EIU</a></li>
+                            <li><a href="#freelance">Freelance</a></li>
+                            <li><a href="#newxietong">新协同国际大酒店</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#additional">Additional Skills</a>
+                        <ul class="nav">
+                            <li><a href="#analysis">Data Analysis</a></li>
+                            <li><a href="#dataviz">Data Visualization</a></li>
+                            <li><a href="#webdev">Web Development</a></li>
+                            <li><a href="#econometrics">Econometrics</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#interests">Other Interests</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var pathname = window.location.pathname;
+                var pathname = pathname.split('/');
+                var tester = pathname[pathname.length - 1];
+
+                $('.nav a').each(function() {
+                    var test = $(this).attr('href');
+                    if (test == tester) {
+                        $(this).addClass('active');
+                    }
+                });
+            });
+
+            $(document).ready(function() {
+                $(".btn-tip").tooltip();
+                $('.btn-pop').popover();
+                $(".location").tooltip();
+                $(".dates").tooltip();
+                $(".icon-tips").tooltip();
+            });
+
+            ! function(a) {
+                a(function() {
+                    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                        var b = document.createElement("style");
+                        b.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}")), document.querySelector("head").appendChild(b)
+                    } {
+                        var c = a(window),
+                            d = a(document.body);
+                        a(".navbar").outerHeight(!0) + 10
+                    }
+                    d.scrollspy({
+                        target: ".bs-docs-sidebar"
+                    }), c.on("load", function() {
+                        d.scrollspy("refresh")
+                    }), a(".bs-docs-container [href=#]").click(function(a) {
+                        a.preventDefault()
+                    }), setTimeout(function() {
+                        var b = a(".bs-docs-sidebar");
+                        b.affix({
+                            offset: {
+                                top: function() {
+                                    var c = b.offset().top,
+                                        d = parseInt(b.children(0).css("margin-top"), 10),
+                                        e = a(".bs-docs-nav").height();
+                                    return this.top = c - e - d
+                                },
+                                bottom: function() {
+                                    return this.bottom = a(".bs-docs-footer").outerHeight(!0)
+                                }
+                            }
+                        })
+                    }, 100), setTimeout(function() {
+                        a(".bs-top").affix()
+                    }, 100), a(".tooltip-demo").tooltip({
+                        selector: "[data-toggle=tooltip]",
+                        container: "body"
+                    }), a(".tooltip-test").tooltip(), a(".popover-test").popover(), a(".bs-docs-navbar").tooltip({
+                        selector: "a[data-toggle=tooltip]",
+                        container: ".bs-docs-navbar .nav"
+                    }), a("[data-toggle=popover]").popover(), a("#loading-example-btn").click(function() {
+                        var b = a(this);
+                        b.button("loading"), setTimeout(function() {
+                            b.button("reset")
+                        }, 3e3)
+                    })
+                })
+            }(jQuery);
+        </script>
+    </footer>
+</body>
+
+</html>
