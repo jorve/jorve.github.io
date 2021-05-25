@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Jeff Jorve - Resume</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <style>
+        .subscribe {
+            width: 28px;
+            height: 28px;
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            margin-left: -15px;
+            border: #EBF2F6 1px solid;
+            text-align: center;
+            line-height: 2.4rem;
+            border-radius: 50px;
+            background: #fff;
+            transition: box-shadow 0.5s;
+        }
+        
+        .subscribe:before {
+            color: #D2DEE3;
+            font-size: 10px;
+            position: absolute;
+            top: 9px;
+            left: 9px;
+            font-weight: bold;
+            transition: color 0.5s ease;
+        }
+        /* Add a box shadow to on hover */
+        
+        .subscribe:hover {
+            box-shadow: rgba(0, 0, 0, 0.05) 0 0 0 3px;
+            transition: box-shadow 0.25s;
+        }
+        
+        .subscribe:hover:before {
+            color: #50585D;
+        }
+        /* for Bootstrap Icon */
+        
+        .bs-booticon {
+            display: inline-block;
+            font-weight: 500;
+            color: #fff;
+            background-color: #563d7c;
+            border-radius: 15%;
+            cursor: default;
+            text-align: center
+        }
+        
+        .bs-booticon-xs {
+            width: 16px;
+            height: 16px;
+            font-size: 12px;
+            line-height: 1.4em;
+        }
+        
+        .found-foundicon {
+            display: inline-block;
+            font-weight: 500;
+            color: #fff;
+            background-color: #008cba;
+            border-radius: 0;
+            cursor: default;
+            text-align: center
+        }
+        
+        .found-foundicon-xs {
+            width: 15px;
+            height: 15px;
+            font-size: 12px;
+            line-height: 1.4em;
+        }
+        
+        .resume-navbar {
+            position: static;
+            margin-top: 0;
+        }
+        
+        .resume-sidebar.affix {
+            position: static
+        }
+        
+        @media (min-width:768px) {
+            .resume-sidebar {
+                padding-left: 20px
+            }
+        }
+        
+        .resume-sidebar .nav>li>a {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: #999;
+            padding: 4px 20px;
+            border-radius: 0;
+        }
+        
+        .resume-sidebar .nav>li>a:hover,
+        .resume-sidebar .nav>li>a:focus {
+            padding-left: 19px;
+            color: #428bca;
+            text-decoration: none;
+            background-color: transparent;
+            border-left: 1px solid #428bca
+        }
+        
+        .resume-sidebar .nav>.active>a,
+        .resume-sidebar .nav>.active:hover>a,
+        .resume-sidebar .nav>.active:focus>a {
+            padding-left: 18px;
+            font-weight: 700;
+            color: #428bca;
+            background-color: transparent;
+            border-left: 2px solid #428bca;
+        }
+        
+        .resume-sidebar .nav .nav {
+            display: none;
+            padding-bottom: 10px
+        }
+        
+        .resume-sidebar .nav .nav>li>a {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            padding-left: 30px;
+            font-size: 12px;
+            font-weight: 400
+        }
+        
+        .resume-sidebar .nav .nav>li>a:hover,
+        .resume-sidebar .nav .nav>li>a:focus {
+            padding-left: 29px
+        }
+        
+        .resume-sidebar .nav .nav>.active>a,
+        .resume-sidebar .nav .nav>.active:hover>a,
+        .resume-sidebar .nav .nav>.active:focus>a {
+            font-weight: 500;
+            padding-left: 28px
+        }
+        
+        .back-to-top {
+            display: none;
+            margin-top: 10px;
+            margin-left: 10px;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #999
+        }
+        
+        .back-to-top:hover {
+            text-decoration: none;
+            color: #428bca
+        }
+        
+        @media (min-width:768px) {
+            .back-to-top {
+                display: block
+            }
+        }
+        
+        @media (min-width:992px) {
+            .resume-sidebar .nav>.active>ul {
+                display: block
+            }
+            .resume-sidebar.affix,
+            .resume-sidebar.affix-bottom {
+                width: 213px
+            }
+            .resume-sidebar.affix {
+                position: fixed;
+                top: 30px
+            }
+            .resume-sidebar.affix-bottom {
+                position: absolute
+            }
+            .resume-sidebar.affix-bottom .resume-sidenav,
+            .resume-sidebar.affix .resume-sidenav {
+                margin-top: 0;
+                margin-bottom: 0
+            }
+        }
+        
+        @media (min-width:1200px) {
+            .resume-sidebar.affix-bottom,
+            .resume-sidebar.affix {
+                width: 263px
+            }
+        }
+        
+        body {
+            padding-bottom: 600px;
+        }
+        
+        ul.additional-skills {
+            display: inline-block;
+            list-style: none;
+        }
+        
+        .additional-skills>li {
+            display: inline-block;
+            padding: 0 2px;
+        }
+        
+        .additional-skills>li:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .skill-type {
+            padding: 3px 0 3px 0;
+            border-bottom: solid 1px #f5f5f5;
+        }
+        
+        .skill-type:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".resume-nav">
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Jeff Jorve</h1>
+            <p>freelance editor, web developer &amp; data scientist</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-9 ">
+            <main class="content" role="main">
+                <div id="cover">
+                    <h2 class="page-header text-center"><small><i class="fa fa-file"></i></small> Cover Letter <small><i class="fa fa-file"></i></small></h2>
+                    <p>This is sample text</p>
+                </div>
+            </main>
+        </div>
+        <div class="col-md-3">
+            <nav role="navigation" class="bs-docs-sidebar resume-nav resume-sidebar">
+                <div class="btn-group" style="margin-bottom:10px;">
+                    <button type="button" class="btn btn-default btn-tip" data-toggle="tooltip" data-placement="bottom" title="Phone: +1(206)979-8381" data-container="body"><a href="tel:206-979-8381" ><i class="fa fa-phone" ></i></a></button>
+                    <button type="button" class="btn btn-default btn-tip" data-toggle="tooltip" data-placement="bottom" title="jeff@jorve.cc" data-container="body"><a href="mailto:jeff@jorve.cc"><i class="fa fa-envelope-o"></i></a> </button>
+                    <button type="button" class="btn btn-default btn-tip" data-toggle="tooltip" data-placement="bottom" data-container="body" data-html="true" title="321 Decatur St<br>Brooklyn, NY 11233"><a href="https://goo.gl/maps/xdWLiZyhVPz" target="_blank"><i class="fa fa-home"></i></a></button>
+                    <button type="button" class="btn btn-default"><a href="https://twitter.com/jorve" target="_blank"><i class="fa fa-twitter"></i></a></button>
+                    <button type="button" class="btn btn-default"><a href="https://github.com/jorve" target="_blank"><i class="fa fa-github-alt"></i></a></button>
+                </div>
+                <ul class="nav nav-pills nav-stacked resume-navbar resume-sidenav">
+                    <li>
+                        <a href="#cover">Cover Letter</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var pathname = window.location.pathname;
+                var pathname = pathname.split('/');
+                var tester = pathname[pathname.length - 1];
+
+                $('.nav a').each(function() {
+                    var test = $(this).attr('href');
+                    if (test == tester) {
+                        $(this).addClass('active');
+                    }
+                });
+            });
+
+            $(document).ready(function() {
+                $(".btn-tip").tooltip();
+                $('.btn-pop').popover();
+                $(".location").tooltip();
+                $(".dates").tooltip();
+                $(".icon-tips").tooltip();
+            });
+
+            ! function(a) {
+                a(function() {
+                    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                        var b = document.createElement("style");
+                        b.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}")), document.querySelector("head").appendChild(b)
+                    } {
+                        var c = a(window),
+                            d = a(document.body);
+                        a(".navbar").outerHeight(!0) + 10
+                    }
+                    d.scrollspy({
+                        target: ".bs-docs-sidebar"
+                    }), c.on("load", function() {
+                        d.scrollspy("refresh")
+                    }), a(".bs-docs-container [href=#]").click(function(a) {
+                        a.preventDefault()
+                    }), setTimeout(function() {
+                        var b = a(".bs-docs-sidebar");
+                        b.affix({
+                            offset: {
+                                top: function() {
+                                    var c = b.offset().top,
+                                        d = parseInt(b.children(0).css("margin-top"), 10),
+                                        e = a(".bs-docs-nav").height();
+                                    return this.top = c - e - d
+                                },
+                                bottom: function() {
+                                    return this.bottom = a(".bs-docs-footer").outerHeight(!0)
+                                }
+                            }
+                        })
+                    }, 100), setTimeout(function() {
+                        a(".bs-top").affix()
+                    }, 100), a(".tooltip-demo").tooltip({
+                        selector: "[data-toggle=tooltip]",
+                        container: "body"
+                    }), a(".tooltip-test").tooltip(), a(".popover-test").popover(), a(".bs-docs-navbar").tooltip({
+                        selector: "a[data-toggle=tooltip]",
+                        container: ".bs-docs-navbar .nav"
+                    }), a("[data-toggle=popover]").popover(), a("#loading-example-btn").click(function() {
+                        var b = a(this);
+                        b.button("loading"), setTimeout(function() {
+                            b.button("reset")
+                        }, 3e3)
+                    })
+                })
+            }(jQuery);
+        </script>
+    </footer>
+</body>
+
+</html>
